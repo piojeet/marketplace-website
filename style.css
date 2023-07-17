@@ -6,6 +6,7 @@
 
 body {
     /* position: relative; */
+    overflow-x: hidden;
 }
 
 .first-nav {
@@ -20,9 +21,9 @@ body {
 
 @media only screen and (max-width:476px) {
     .first-nav {
-       
+
         /* background: red; */
-        
+
         padding: 0 1rem;
     }
 
@@ -187,15 +188,41 @@ nav div a:nth-child(2) {
 header nav svg {
     width: 1.5rem;
     display: none;
+    cursor: pointer;
+}
+
+header nav#close {
+    display: none;
 }
 
 @media only screen and (max-width:986px) {
     header nav ul {
-        background-color: red;
-        display: none;
+        background-color: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(20px);
+        padding: 2rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        flex-direction: column;
+        z-index: 1;
+        width: 80%;
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        transition: 1s;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        
     }
 
-    .first-nav > a {
+    
+
+    nav {
+        position: relative;
+    }
+
+    .first-nav>a {
         /* background: red; */
         font-size: 25px;
     }
@@ -207,11 +234,37 @@ header nav svg {
 }
 
 @media only screen and (max-width:986px) {
-    header nav svg {
+    header nav div svg#menu {
         /* background-color: red; */
         /* display: none; */
         display: block;
     }
+
+    .active div svg#close {
+        display: block;
+    }
+
+    .active div svg#menu {
+        display: none;
+    }
+
+    .active ul {
+        background-color: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(20px);
+        padding: 2rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        flex-direction: column;
+        z-index: 10;
+        width: 80%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    
 
     nav div a:nth-child(1) {
         font-size: 12px;
@@ -339,7 +392,7 @@ header nav svg {
         border: none;
     }
 
-    
+
 }
 
 .section1 .ri-search-line {
@@ -559,7 +612,7 @@ footer #email {
         box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     }
 
-    
+
 }
 
 footer #contact-email {
@@ -600,4 +653,5 @@ footer #contact-email i {
         border-radius: 50%;
     }
 }
+
 /* ####### footer ######### */

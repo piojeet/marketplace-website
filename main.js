@@ -1,14 +1,9 @@
-gsap.to(".clothes",{
-    y:0,
-    // opacity:0,
-    duration:1,
-    stagger:0.4,
-    scrollTrigger:{
-        trigger:".clothes",
-        scroller:"body",
-        // markers:true,
-        start:"top 70%",
-        end:"top 65%",
-        scrub:2
-    }
-}) 
+const mobile_nav = document.querySelector(".mobile-navbar-btn");
+const nav_header = document.querySelector(".header");
+
+const toggleNavbar = () => {
+  // alert("Plz Subscribe ");
+  nav_header.classList.toggle("active");
+};
+
+mobile_nav.addEventListener("click", () => toggleNavbar());
